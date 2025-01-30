@@ -48,4 +48,5 @@ python3
 
 at the moment first person to login will also become the admin, so be aware of that. (this was not planed, and as it seemed to me only one admin was needed i left it so. )
 
+Fyi only first person that registered is going to be admin account all other are non admin accounts
 
