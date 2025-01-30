@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="report-content">
+
+
+    {% if id is defined and result[0] is defined %}
+    <h2>This is report for user: [{{result[0].User.username}}]</h2>
+    <!-- <h1>{{result[0].SolvedQuestioneer.user_id}}</h1> -->
+    <a class="button" href="/report">all users</a>
+    {% endif %}
+    {% if id is not defined %}
+    <h2>This is report for all users in system</h2>
+    <a class="button"  href="/dashboard">Dashboard</a>
+    {% endif %}
+
+    {% if result is defined and result[0] is defined %}
+
+    <table border="1">
+        <thead>
+            <tr>
+                <!-- <th>ID</th> -->
+                {% if id is not defined%}
+                <th>User ID</th>
+                <th>Username</th>
+                {% endif %}
+                {% if id is defined and result[0] is defined%} 
+                <th>Action</th>
+                {% endif %}
+                <th>Question</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in result %}
+            <tr>
+                <!-- <td>{{item.SolvedQuestioneer.id}}</td> -->
+                {% if id is not defined %}
+                <td> 
+                    <a class="button" href="/user/report/{{item.SolvedQuestioneer.user_id}}">View Single User Data</a>
+
+                </td>
+                <td>{{item.User.username}}</td>
+                {% endif %}
+                
+                {% if id is defined and result[0] is defined %} 
+                <td>
+                    <a class="" href="/posts/{{item.SolvedQuestioneer.id}}">Edit Post</a>
+                    <a class="button confirmation" href="/posts/delete/{{item.SolvedQuestioneer.id}}">Remove Post</a>
+                </td>
+                {% endif %}
+
+                <td>{{item.SolvedQuestioneer.question}}</td>
+                <td>{{item.SolvedQuestioneer.value}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+<div class="content">
+
+    <h1>Empty, selected user has no data</h1>
+    <a class="button" href="/dashboard">Go to main Dashboard</a>
+    <a class="button" href="/report">Go to Report</a>
+    <a class="button" href="/managment">Go to User Managment</a>
+</div>
+{% endif %}
+
+    
+    
+
+    </div>
+{% endblock %}

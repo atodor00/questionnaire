@@ -1,0 +1,67 @@
+{
+  "questionnaire": {
+    "title": "Massage Therapy Intake Form",
+    "description": "Please fill out this form to help your massage therapist understand your needs and any concerns.",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What is the primary reason for your visit today?",
+        "type": "text"
+      },
+      {
+        "id": 2,
+        "question": "Do you have any specific areas of pain or discomfort?",
+        "type": "text"
+      },
+      {
+        "id": 3,
+        "question": "Have you had any recent injuries or surgeries? If yes, please provide details.",
+        "type": "text"
+      },
+      {
+        "id": 4,
+        "question": "Do you have any chronic conditions or ongoing health concerns? (e.g., arthritis, fibromyalgia, etc.)",
+        "type": "text"
+      },
+      {
+        "id": 5,
+        "question": "Are you currently pregnant? If yes, how far along are you?",
+        "type": "text"
+      },
+      {
+        "id": 6,
+        "question": "Do you have any allergies or sensitivities to lotions, oils, or scents?",
+        "type": "text"
+      },
+      {
+        "id": 7,
+        "question": "What type of pressure do you prefer during your massage?",
+        "options": [
+          "Light",
+          "Medium",
+          "Firm"
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 8,
+        "question": "Are there any areas of your body you would like the therapist to avoid?",
+        "type": "text"
+      },
+      {
+        "id": 9,
+        "question": "Do you have any other concerns or requests for your session?",
+        "type": "text"
+      },
+      {
+        "id": 10,
+        "question": "Have you received professional massages before?",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "type": "multiple_choice"
+      }
+    ]
+  }
+}

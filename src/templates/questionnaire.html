@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<div class="content">
+    <!-- <p>
+        if config:
+        print("Configuration Loaded:")
+        print(config['questionnaire']['title'])
+        print(config['questionnaire']['description'] )
+        # print(config['questionnaire']['questions'][0] )
+        # print(config['questionnaire']['questions'][0]['id'] )
+        # print(config['questionnaire']['questions'][0]['question'] )
+        # print(config['questionnaire']['questions'][0]['type'] )
+        for item in config['questionnaire']['questions']:
+            print('')
+            # print(str(item['id']) )
+            print(str(item['question']) )
+            if(item['type']) == "multiple_choice":
+                # print(str(item['type']) )
+                for option in item['options']:
+                    print(str(option) )
+
+    </p> -->
+    
+    <h1>{{title}}</h1>
+
+    <div class="content">
+        <form action="/questionnaire" method="post">
+            <h3>{{description}}</h3>
+            {% for question in questions %}
+            <p>{{ question.question }}</p>
+            
+            {% if question.type == "text" %}
+            <input type="text" name="{{question.id}}" id="{{ question.id }}" required> 
+            {% endif %}
+            {% if question.type == "multiple_choice" %}
+            <div class="custom-select">
+                
+                <select id="{{question.id}}" name="{{question.id}}">
+                    <!-- <option value="light">Light</option>
+                    <option value="medium">Medium</option>
+                    <option value="firm">Firm</option> -->
+                    <option value="{{question.options[0]}}">{{ question.options[0] }}</option>
+                    {% for option in question.options %}
+                    <option value="{{option}}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <br>
+            {% endif %}
+
+            {% endfor %}
+            <br>
+            <input class="button" type="submit" value="Finish">        
+        </div>
+    </form>
+
+
+
+
+</div>
+{% endblock %}

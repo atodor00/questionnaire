@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="content">
+
+    <h1>Administrator questionnaire matadata edit form</h1>
+    <a class="button" href="{{url_for('dashboard')}}">Dashboard</a></td>
+    <br>
+    <hr>   
+    <div>
+    <form action="/questionnaire/manipulator/titleAndDescription" method="post">
+        <label for="title"><strong>Title:</strong></label>
+        <input type="text" name="title" id="title" value="{{title}}"> 
+        <label for="description"><strong>Description:</strong></label>
+        <input type="text" name="description" id="description" value="{{description}}"> 
+        <br>
+        <input class="button confirmation" type="submit" value="Finish">   
+    </form>
+      
+
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="content">
+    <h1>Questionnaire</h1>
+    <div class="flex-container">
+        <a class="button flex-item"  href="{{url_for('login')}}">Login Page</a> 
+        <a class="button flex-item"  href="{{url_for('register')}}">Register Page</a> 
+    </div>
+</div>
+{% endblock %}

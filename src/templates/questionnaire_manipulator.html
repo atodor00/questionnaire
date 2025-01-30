@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<h1>manipulator segment</h1>
+
+<div class="content">
+
+    {% if message is defined %}
+    <h2>{{message}}</h2>
+    {% endif %}
+    <hr>
+    <h1>{{title}}</h1>
+    <h3>{{description}}</h3>
+    <a class="button" href="{{url_for('dashboard')}}">Dashboard</a></td>
+    <a class="button" href="/questionnaire/manipulator/titleAndDescription">EDIT metadata</a>
+    <hr>
+    <div class="content">
+
+
+        <div>
+            {% for question in questions %}
+            <p>{{ question.question }} <a class="confirmation" href="/questionnaire/manipulator/remove/{{question.id}}">remove this question from questionnaire </a></p> 
+            
+            {% if question.type == "text" %}
+            <!-- <p>text</p> -->
+            {% endif %}
+            {% if question.type == "multiple_choice" %}
+            <!-- <div> -->
+                {% for option in question.options %}
+                <em>{{ option }}</em>
+                {% endfor %}
+            <!-- </div> -->
+            <br>
+            {% endif %}
+
+            {% endfor %}
+        </div>
+     
+        <hr>
+
+
+
+        <form action="/questionnaire/manipulator" method="post">
+            <h3>Add a question</h3>
+
+            <input type="text" name="text" id="text" required> 
+
+            <div class="custom-select">
+                
+            <select id="type" name="type">
+                    <option value="text">text</option> 
+                    <option value="multiple_choice">multiple_choice</option>
+                    <option value="text">text</option>
+            </select>
+        </div>
+        <br>
+        <div class="hidden-toggle hidden">
+
+            <label for="multiple_choice">with [:] separated response from a user example...    Light:Medium:Hard</label>
+            <input class="" type="text" name="multiple_choice" id="multiple_choice" required value="Light:Medium:Hard"> 
+            <br>
+        </div>
+
+            <br>
+            <input class="button" type="submit" value="Finish">        
+        </div>
+    </form>
+
+
+</div>
+{% endblock %}

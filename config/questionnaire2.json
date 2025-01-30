@@ -1,0 +1,88 @@
+{
+    "questionnaire": {
+        "title": "Math Education Intake Form (edited)",
+        "description": "Please fill out this form to help your tutor to understand your needs, strengths, and areas of improvement in math.",
+        "questions": [
+            {
+                "id": 1,
+                "question": "What grade are you in at school?",
+                "type": "text"
+            },
+            {
+                "id": 2,
+                "question": "What do you think you're really good at in math? (e.g., adding, problem-solving, etc.)",
+                "type": "text"
+            },
+            {
+                "id": 3,
+                "question": "Are there any parts of math that you find tricky or hard to understand? (e.g., fractions, shapes, algebra, etc.)",
+                "type": "text"
+            },
+            {
+                "id": 4,
+                "question": "Have you ever had a tutor or extra help in math before? If yes, what did you like or not like about it?",
+                "type": "text"
+            },
+            {
+                "id": 5,
+                "question": "Do you have any math goals or big tests coming up that you want to prepare for?",
+                "type": "text"
+            },
+            {
+                "id": 6,
+                "question": "How do you feel about math? Do you like it, find it hard, or feel okay about it?",
+                "type": "text"
+            },
+            {
+                "id": 7,
+                "question": "What helps you learn best? Do you like pictures, hands-on activities, using a computer, or something else?",
+                "type": "text"
+            },
+            {
+                "id": 8,
+                "question": "Do you have any difficulties or challenges when learning, like trouble focusing or reading?",
+                "type": "text"
+            },
+            {
+                "id": 9,
+                "question": "How much time do you think you can spend each week working on math?",
+                "type": "text"
+            },
+            {
+                "id": 10,
+                "question": "Do you like learning in person, online, or do you not mind either way?",
+                "options": [
+                    "In-person",
+                    "Online",
+                    "No preference"
+                ],
+                "type": "multiple_choice"
+            },
+            {
+                "id": 11,
+                "question": "Do you have everything you need for tutoring, like a computer, internet, or a calculator?",
+                "type": "text"
+            },
+            {
+                "id": 12,
+                "question": "What\u2019s the hardest math problem you\u2019ve ever solved? Do you remember how you solved it?",
+                "type": "text"
+            },
+            {
+                "id": 13,
+                "question": "Do you like working on math alone, or do you prefer doing it with someone?",
+                "type": "text"
+            },
+            {
+                "id": 14,
+                "question": "If you could pick one math topic to learn more about, what would it be?",
+                "type": "text"
+            },
+            {
+                "id": 15,
+                "question": "What do you think makes math fun or interesting?",
+                "type": "text"
+            }
+        ]
+    }
+}

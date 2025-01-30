@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="content">
+
+    <h1>Administrator user data managment</h1>
+    <a class="button" href="dashboard">Dashboard</a></td>
+    <div>
+        
+        {% for user in users %}
+        {% if  user.id == 1 %}
+        
+        <!-- <div class="content admin-border flex-item">
+            <h3>[Admin]  {{user.username}} {{user.id}}</h3>
+            <p><a href="#">Delete user data (questionnaire responses)</a></p>
+         #TODO <p><a href="#">Change the password</a></p>
+            <br>
+        </div> -->
+        <div class=" admin-border">
+            <h3>[Admin] {{user.username}} (ID: {{user.id}})</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Action</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a class="button confirmation" href="managment/delete/userdata/{{user.id}}">Delete User Data</a></td>
+                  <td>Removes questionnaire responses</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+
+
+
+        {% else %}
+<!--         
+        
+        <div class=" border flex-item" >
+            
+            
+            <h3>[User] {{user.username}} {{user.id}}</h3>
+        <p><a href="#">Remove this user (can't delete admin account)</a></p>
+        <p><a href="#">Delete user data (questionnaire responses)</a></p>
+        <p><a href="#">Block user - scramble the password</a></p>
+        <br>
+    </div> -->
+
+    <div class="border">
+        <h3>[User] {{user.username}} (ID: {{user.id}})</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a class="button confirmation" href="/managment/delete/user/{{user.id}}">Remove User and Data</a></td>
+              <td>Removes account and questionnaire responses</td>
+            </tr>
+            <tr>
+              <td><a class="button confirmation"  href="/managment/delete/userdata/{{user.id}}">Delete User Data</a></td>
+              <td>Removes questionnaire responses</td>
+            </tr>
+            <tr>
+              
+              <td><a class="button" href="/user/report/{{user.id}}">View Single User Data</a></td>
+              <td>View data of the user</td>
+            </tr>
+            <!-- <tr> 
+              <td><a class="button comfirmation" href="#">Block User</a></td>
+              <td>Scrambles the password</td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+    {% endif %}  
+    {% endfor %}
+    
+    
+</div>
+    
+</div>
+{% endblock %}

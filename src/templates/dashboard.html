@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="content">
+
+    <h1>Dashboard</h1>
+
+    {% if is_sent %}
+    <h1>Congrats, form is sent</h1>
+    {% endif %}
+
+    <p>
+        <a class="confirmation" href="{{url_for('logout')}}">Press here to Logout</a>
+    </p>
+    <p>
+        <a href="{{url_for('questionnaire')}}">Press here to go to the Questionner...</a>
+    </p>
+    {% if is_admin %}
+    <p>
+        <a href="{{url_for('report')}}">Press here for Report </a>
+    </p>
+    <p>
+        <a href="{{url_for('managment')}}">Press here for data managmet remove user and their data</a>
+    </p>
+    <p>
+        <a href="{{url_for('questionnaire_manipulator')}}">Press here for questionnaire data managmet (remove questions, add new ones etc)</a>
+    </p>
+    {% endif %}
+    
+</div>
+{% endblock %}
