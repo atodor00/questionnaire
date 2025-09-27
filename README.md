@@ -1,4 +1,4 @@
-# Project Questionnair 
+# Project Questionnaire
 
 this is python project for creating questions that potentionaly bussiness owners could use to ask their customers some information. As i do not care if this is used in other projects or not it will be in open source MIT licence so it is free to use.
 
